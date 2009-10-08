@@ -9,8 +9,8 @@ src_compile() {
 	cd ${B}
 
 	check_pkg_config PIDGIN pidgin
-	verbose gcc ${CFLAGS} ${PIDGIN_CFLAGS} -c -o manualsize.o manualsize.c || error "gcc compile failed"
-	verbose gcc -shared -Wl,--enable-auto-image-base ${LDFLAGS} -o manualsize.dll manualsize.o ${PIDGIN_LIBS} || error "gcc link failed"
+	verbose ${CC} ${CFLAGS} ${PIDGIN_CFLAGS} -c -o manualsize.o manualsize.c || error "gcc compile failed"
+	verbose ${CC} -shared -Wl,--enable-auto-image-base ${LDFLAGS} -o manualsize.dll manualsize.o ${PIDGIN_LIBS} || error "gcc link failed"
 }
 
 src_install() {
