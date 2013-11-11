@@ -1,14 +1,15 @@
 inherit utils
 
 NAME="pidgin-manualsize"
-VERSION=0.6a
+VERSION=0.7
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="Pidgin plugin to resize input area size"
 DESCRIPTION="This plugin allows you to resize input area size in Pidgin
 conversation windows."
-HOMEPAGE="http://myfotomx.com/builds_en.html"
-SRC_URI="http://myfotomx.com/files/${NAME}-${VERSION}.tar.bz2"
+HOMEPAGE="http://issv.org.ru/"
+#SRC_URI="http://issv.org.ru/oss/${NAME}-${VERSION}.tar.bz2"
+SRC_URI="ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/${NAME}-${VERSION}.tar.bz2"
 
 src_compile() {
 	lndirs
