@@ -1,0 +1,26 @@
+inherit utils
+
+NAME="pidgin-manualsize"
+VERSION=0.6a
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="Pidgin plugin to resize input area size"
+DESCRIPTION="This plugin allows you to resize input area size in Pidgin
+conversation windows."
+HOMEPAGE="http://myfotomx.com/builds_en.html"
+SRC_URI="http://myfotomx.com/files/${NAME}-${VERSION}.tar.bz2"
+
+src_compile() {
+	lndirs
+	cd ${B}
+
+	check_pkg_config PIDGIN pidgin
+	verbose ${CC} ${CFLAGS} ${PIDGIN_CFLAGS} -c -o manualsize.o manualsize.c || error "gcc compile failed"
+	verbose ${CC} -shared ${LDFLAGS} -o manualsize.dll manualsize.o ${PIDGIN_LIBS} || error "gcc link failed"
+}
+
+src_install() {
+	cd ${B}
+	exeinto /usr/lib/pidgin
+	doexe manualsize.dll
+}

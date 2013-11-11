@@ -1,5 +1,0 @@
-category: Net Gnome
-requires: libgcc1 libglib2.0_0 libgtk2.0_0 libpurple0 pidgin
-sdesc: "Pidgin plugin to resize input area size"
-ldesc: "This plugin allows you to resize input area size in Pidgin
-conversation windows."
